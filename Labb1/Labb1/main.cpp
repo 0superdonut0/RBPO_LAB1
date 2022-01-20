@@ -50,11 +50,11 @@ void ReadPersonData(string& name, unsigned short& age, unsigned short& height, u
 };
 
 void WritePersonData(const string& name, const unsigned short age, const string& height = "", const string& weight = "", const string& salary = "") {
-    cout << "Name:   " << name << endl;
-    cout << "Age:    " << age << endl;
-    if (!height.empty()) cout << "Height: " << height << endl;
-    if (!weight.empty()) cout << "Weight: " << weight << endl;
-    if (!salary.empty()) cout << "Salary: " << salary << endl;
+    cout << "   Name   " << name << endl;
+    cout << "   Age    " << age << endl;
+    if (!height.empty()) cout << "  Height " << height << endl;
+    if (!weight.empty()) cout << "  Weight " << weight << endl;
+    if (!salary.empty()) cout << "  Salary " << salary << endl;
 };
 
 int main(int argc, char** argv) {
@@ -62,7 +62,9 @@ int main(int argc, char** argv) {
     unsigned short age, height, weight;
     double salary;
     ReadPersonData(name, age, salary);
+    cout << "Result: \n";
     WritePersonData(name, age, "", "", to_string(salary));
     ReadPersonData(name, age, height, weight);
+    cout << "Result: \n";
     WritePersonData(name, age, to_string(height), to_string(weight));
 };
